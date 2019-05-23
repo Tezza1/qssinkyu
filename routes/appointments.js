@@ -1,5 +1,10 @@
 const express = require('express');
-const router = require('router');
+const router = express.Router();
+// const mongoose = require('mongoose');
+
+// ---------- LOAD MONGOOSE MODELS ----------
+
+
 
 // ---------- MAKING AN APPOINTMENT ----------
 
@@ -41,4 +46,4 @@ router.post('/delete/:id', (req, res) => {
     res.send('/delete/:id');
 })
 
-module.export = router;
+module.exports = router;

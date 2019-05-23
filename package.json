@@ -1,0 +1,32 @@
+{
+  "name": "qssinkyu",
+  "version": "1.0.3",
+  "description": "Web app to provide information, handle inquiries and book appointments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tezza1/qssinkyu.git"
+  },
+  "keywords": [
+    "SCSS",
+    "React",
+    "Node",
+    "Express",
+    "Mongoose",
+    "MongoDB",
+    "Passport",
+    "TravisCI"
+  ],
+  "author": "Terry Shenker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tezza1/qssinkyu/issues"
+  },
+  "homepage": "https://github.com/Tezza1/qssinkyu#readme",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
+}
