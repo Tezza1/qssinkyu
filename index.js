@@ -1,6 +1,21 @@
-const express = require("express");
+const express = require('express');
+const mongoose = require('mongoose');
 
 const app = express();
+
+// ---------- CONNECTION TO MONGODB ----------
+/*
+Username: admin
+Password: admin12
+Connection string: mongodb+srv://admin:<password>@cluster0-h3shv.mongodb.net/test?retryWrites=true
+*/
+
+// Connect to database
+// mongoose.Promise = global.Promise;
+const db = require('./config/database');
+mongoose.connect(db.mongoURI,  {useNewUrlParser: true})
+  .then(() => console.log('MongoDB Connected...'))
+  .catch(err => console.log(err));
 
 
 // ---------- ROUTES ----------

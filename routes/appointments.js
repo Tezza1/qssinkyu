@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // ---------- LOAD MONGOOSE MODELS ----------
-
+require('../models/Appointment');
+const Appointment = mongoose.model('appointments');
 
 
 // ---------- MAKING AN APPOINTMENT ----------
