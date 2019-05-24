@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const passport = require('passport');
+const bcrypt = require('bcryptjs');
 
 // ---------- LOAD MONGOOSE MODELS ----------
 require('../models/User');
 const User = mongoose.model('users');
 
 
+// do this with React router?????
 // ---------- LOGIN ----------
 // @route     GET
 // @desc      Get form to login
@@ -18,8 +21,12 @@ router.get('/login', (req, res) => {
 // @route     GET
 // @desc      Login
 // @access    Public
-router.post('/login', (req, res) => {
-    res.send('logging in');
+router.post('/login', (req, res, next) => {
+    passport.authenticate('local', {
+        successRedirect: '/', // TODO' fix-up
+        failureRedirect: '/',
+        failureFlash: true
+    })(req, res, next)
 });
 
 // ---------- LOGOUT ----------
