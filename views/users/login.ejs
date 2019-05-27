@@ -1,0 +1,67 @@
+<!DOCTYPE>
+<html lang="jpn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q’s鍼灸院</title>
+     <meta name="description" content="当院では鍼灸治療に捉われず、可能な限り患者様のご要望に沿った施術を致しております">
+    <meta name="keywords" content="湊川, 荒田町, 鍼灸, 整体, 機能訓練, 頭痛, 腰痛, 首の痛み, 肩の痛み, 五十肩">
+    <meta name="author" content="Terry Shenker">
+    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:500|Noto+Sans+TC:300" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139725168-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-139725168-1');
+    </script>
+</head>
+
+<body>
+    <main>
+        <div id="adminModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <img class="modal-logo" src="img/logo.jpg" alt="">
+                        <h4 class="modal-title ml-3 mt-2">管理者</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <form>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="usr"><span class="form-icon mr-2"><i class="fas fa-user-circle"></i></span>名:</label>
+                                <input type="text" class="form-control" id="usr" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd"><span class="form-icon mr-2"><i class="fas fa-key"></i></span>パスワード:</label>
+                                <input type="password" class="form-control" id="pwd" required>
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-dark btn-lg btn-block btn-ok">ログイン</button>
+                            <br>
+                            <button type="button" class="btn btn-dark btn-lg btn-block btn-cancel" data-dismiss="modal">キャンセル</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

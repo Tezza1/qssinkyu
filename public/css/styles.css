@@ -1,0 +1,312 @@
+/* COLORS */
+body {
+    background-color: #fffff7;
+}
+
+#top-nav {
+    background-color: #e8d4a1;
+    border-bottom: 2px solid #36e5c0;
+}
+
+footer {
+    border-top: 2px solid #36e5c0;
+    background-color: #e8d4a1;
+}
+
+p,
+label,
+.google-link-btn {
+    color: #593221;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+    color: #593221;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none;
+}
+
+/* HEADER */
+#hamburger-btn {
+    background-color: #4b4b4b;
+    border: 2px solid #36e5c0;
+    margin: -6rem -5rem 0 3rem;
+}
+
+.logo-header {
+    max-height: 10rem;
+}
+
+/* PARAGRAPHS */
+.section-header {
+    margin-bottom: 1rem;
+}
+
+.fa-grip-lines-vertical {
+    color: #36e5c0;
+    margin-right: .6rem;
+}
+
+.paragraph-image {
+    max-width: 70%;
+}
+
+/* CARDS */
+.card {
+    border: 1px solid #36e5c0;
+    background-color: #fffff7;
+}
+
+.card-text p {
+    color: #4b4b4b;
+}
+
+.price-button {
+    border: none;
+    background-color: #fffff7;
+    color: #593221;
+}
+
+.price-button:hover {
+    color: #36e5c0;
+}
+
+.price-button:focus {
+    border: none;
+}
+
+.popover {
+    background: #fffff7;
+    color: #593221;
+    border: 2px solid #36e5c0;
+}
+
+/* TABLE */
+th {
+    color: #593221;
+}
+
+td {
+    color: #4b4b4b;
+}
+
+.fa-slash {
+    color: #36e5c0;
+}
+
+.table-side-label {
+    padding-right: 3rem !important;
+    font-size: 90%;
+}
+
+/* ACCESS */
+.external-link {
+    color: #593221;
+}
+
+.external-link:hover {
+    color: #593221;
+}
+
+/* CONTACT */
+.contact-link {
+    color: #593221;
+}
+
+.contact-link:hover {
+    color: #36e5c0;
+    text-decoration: none;
+}
+
+.google-link-btn {
+    border: 1px solid #593221;
+}
+
+.google-link-btn:hover {
+    color: #36e5c0;
+}
+
+.bottom-btn {
+    color: #36e5c0;
+    background-color: #4b4b4b;
+    font-weight: bold;
+    font-size: 110%;
+    padding: 1rem;
+    border: 1px solid #36e5c0;
+}
+
+.bottom-btn:hover {
+    color: #593221;
+    border: 1px solid #593221;
+    background-color: #e8d4a1;
+}
+
+/* FORM */
+.modal-content {
+    background-color: #fffff7;
+}
+
+.modal-logo {
+    max-height: 3rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.modal-header {
+    border-bottom: 2px solid #36e5c0;
+}
+
+.modal-footer {
+    border-top: 2px solid #36e5c0;
+}
+
+.form-icon {
+    color: #36e5c0;
+}
+
+label {
+    font-weight: bold;
+    color: #593221;
+}
+
+.form-control {
+    border: 1px solid #36e5c0;
+    background-color: #fffff7;
+}
+
+.form-control:focus {
+    background-color: #fffff7;
+}
+
+.btn-ok {
+    background-color: #36e5c0;
+    border: 1px solid #4b4b4b;
+    color: #4b4b4b;
+    font-weight: bold;
+}
+
+.btn-ok:hover {
+    color: #593221;
+    background-color: #e8d4a1;
+    border: 1px solid #593221;
+}
+
+.btn-cancel {
+    background-color: #4b4b4b;
+    border: 1px solid #36e5c0;
+    color: #36e5c0;
+    font-weight: bold;
+}
+
+.btn-cancel:hover {
+    color: #593221;
+    background-color: #e8d4a1;
+    border: 1px solid #593221;
+}
+
+/* FOOTER */
+.footer-logo {
+    max-height: 4rem;
+}
+
+.footer-icon {
+    color: #593221 !important;
+    font-size: 20px !important;
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+}
+
+.footer-icon:hover {
+    color: #5d4037 !important;
+}
+
+/* SIDENAV */
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #4b4b4b;
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.side-link {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #36e5c0;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-link:hover {
+    color: #e8d4a1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidebar-btn {
+    margin-top: 10px;
+    background-color: #4b4b4b;
+    color: #36e5c0;
+    border: 1px solid #36e5c0;
+}
+
+.sidebar-btn:hover {
+    background-color: #e8d4a1;
+    color: #593221;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #hamburger-btn {
+        margin: -7rem -5rem 0 1rem;
+    }
+
+    .table-side-label {
+        padding-right: 1rem !important;
+    }
+
+    .table-side-header {
+        font-size: 60%;
+    }
+}

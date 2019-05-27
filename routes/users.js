@@ -9,13 +9,12 @@ require('../models/User');
 const User = mongoose.model('users');
 
 
-// do this with React router?????
 // ---------- LOGIN ----------
 // @route     GET
 // @desc      Get form to login
 // @access    Public
 router.get('/login', (req, res) => {
-    res.send('login page');
+    res.render('users/login');
 });
 
 // @route     GET
@@ -23,11 +22,22 @@ router.get('/login', (req, res) => {
 // @access    Public
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {
-        successRedirect: '/', // TODO' fix-up
+        successRedirect: '/user/dashboard',
         failureRedirect: '/',
         failureFlash: true
     })(req, res, next)
 });
+
+// @route     GET
+// @desc      User dashboard
+// @access    Private
+router.post('/user/dashboard', (req, res, next) => {
+    // lists buttons to access:
+    //    - calendar
+    //    - inquiries
+    //    - appointments
+});
+
 
 // ---------- LOGOUT ----------
 // @route     GET

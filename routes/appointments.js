@@ -13,7 +13,7 @@ const Appointment = mongoose.model('appointments');
 // @desc      Get form to add an appointment
 // @access    Public
 router.get('/add', (req, res) => {
-    res.send('get --> add');
+    res.render('appointment/appointment');
 });
 
 // @route     POST

@@ -13,13 +13,15 @@ const Inquiry = mongoose.model('inquiries');
 // @desc      Get form to add an inquiry
 // @access    Public
 router.get('/add', (req, res) => {
-    res.send('get --> add');
+    // form to create an enquiry page --> can do in react? --> LamgexBot
+    res.render('inquiry/inquiry');
 });
 
 // @route     POST
 // @desc      Add an inquiry
 // @access    Public
 router.post('/add', (req, res) => {
+    // post data to server with information
     res.send('post --> add');
 });
 
@@ -29,14 +31,24 @@ router.post('/add', (req, res) => {
 // @route     GET
 // @desc      Add an inquiry
 // @access    Private
-router.get('/dashboard', (req, res) => {
+router.get('/inquiries/dashboard', (req, res) => {
+    // list all inquiries
     res.send('get --> dashboard');
 });
 
 // @route     GET
 // @desc      Edit an inquiry
 // @access    Private
-router.post('/edit/:id', (req, res) => {
+router.get('inquiries/edit/:id', (req, res) => {
+    // put an inquiry into an edit form
+    res.send('/:edit/:id');
+});
+
+// @route     POST
+// @desc      Edit an inquiry
+// @access    Private
+router.post('inquiries/edit/:id', (req, res) => {
+    // send data back to server with info
     res.send('/:edit/:id');
 });
 

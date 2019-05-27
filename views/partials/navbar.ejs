@@ -1,0 +1,53 @@
+<!-- view/partials/footer.ejs -->
+<nav class="navbar navbar-expanded-lg navbar-dark mx-auto text-center" aria-expanded="false" aria-label="Toggle navigation" id="top-nav">
+    <!-- Toggler/collapsibe Button -->
+    <button type="button" class="btn float-left" id="hamburger-btn" data-toggle="dropdown">
+        <span onclick="openNav()">
+            <span class="navbar-toggler-icon"></span>
+        </span>
+    </button>
+    <!-- SIDENAV -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn side-link" onclick="closeNav()">&times;</a>
+        <a class="side-link" href="#紹介">紹介</a>
+        <a class="side-link" href="#料金">料金</a>
+        <a class="side-link" href="#受付時間">受付時間</a>
+        <a class="side-link" href="#接近">アクセス</a>
+        <a class="side-link" href="#contact_info">コンタクト</a>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a type="button" class="btn btn-outline-secondary btn-block sidebar-btn" href="inquiries/add">
+                        <i class="far fa-paper-plane mb-2"></i>
+                        <br>
+                        問い合わせ
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a type="button" class="btn btn-outline-secondary btn-block sidebar-btn" href="appointments/add">
+                        <i class="far fa-calendar-alt mb-2"></i>
+                        <br>
+                        予約
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a type="button" class="btn btn-outline-secondary btn-block sidebar-btn" href="users/login">
+                        <i class="fas fa-tools"></i>
+                        <br>
+                        管理者
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LOGO HEADER -->
+    <a class="navbar-brand mx-auto text-center" href="#">
+        <img class="img-fluid logo-header" src="img/logo.png" alt="Shop logo">
+        <h1 class="text-center main-header"><span class="mr-1"><i class="fab fa-quora"></i>’s</span>鍼灸院</h1>
+    </a>
+</nav>

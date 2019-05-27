@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -29,6 +30,12 @@ mongoose.connect(db.mongoURI,  {useNewUrlParser: true})
 
 // ---------- MIDDLEWARE ----------
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// Static folder
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -50,13 +57,11 @@ app.use(passport.session());
 
 // ---------- ROUTES ----------
 
-
-
 // @route     GET
 // @desc      Main info page
 // @access    Public
 app.get('/', (req, res) => {
-    res.send("hello");
+    res.render('index');
 });
 
 // Use routes

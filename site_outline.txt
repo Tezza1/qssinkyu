@@ -1,0 +1,106 @@
+USER
+- Login form:
+    + FRONT-END: React router --> navigate to form on separate page (maybe have illusion of modal)
+- Login
+    + BACK-END:
+        * fetch call to "POST: user/login"
+        * find user & match user & password
+    + FRONT-END:
+        * React router: if successful got to dashboard ELSE go to homepage
+- Dashoboard
+    + FRONT-END:
+        * React router: go to dashboard (show buttons for appt, inq & calendar)
+- Logout
+    + FRONT-END:
+        * React router: go to logout screen
+    + BACK-END: fetch call to "POST: user/logout"
+        * Find user and logout
+
+INQUIRIES (CLIENT)
+- Inquiry form:
+    + FRONT-END:
+        * React router: go to form
+- Make an inquiry
+    + BACK-END:
+        * Fetch call to "POST: inquiry/add"
+        * Save to database
+        * Send message to admin?
+        * Confirm to client?
+
+INQUIRIES (ADMIN)
+- Dashboard
+    + FRONT-END:
+        * React router: go to dashboard
+    + BACK-END:
+        * Fetch call to "GET: inquiry/dashboard"
+        * Inquiry.Find();
+
+- Edit and inquiry form
+    + FRONT-END:
+        * React router: go to form
+    + BACK-END:
+        * Fetch call to: "GET: inquiry/find/:id"
+        * Inquiry.FindOne();
+
+- Edit an inquiry
+    + BACK-END:
+        * Fetch call to "POST: inquiry/edit/:id"
+        * Inquiry.InsertOne()
+
+- Delete and inquiry form
+    + FRONT-END:
+        * React router: go to form
+    + BACK-END:
+        * Fetch call to: "GET: inquiry/find/:id"
+        * Inquiry.FindOne();
+
+- Delete an inquiry
+    + BACK-END:
+        * Fetch call to "POST: inquiry/edit/:id"
+        * Inquiry.InsertOne()
+
+
+APPOINTMENTS (CLIENT)
+- Appointment form:
+    + FRONT-END:
+        * React router: go to form
+- Make an appointment
+    + BACK-END:
+        * Fetch call to "POST: appointment/add"
+        * Save to database
+        * Send message to admin?
+        * Confirm to client?
+
+APPOINTMENTS (ADMIN)
+- Dashboard
+    + FRONT-END:
+        * React router: go to dashboard
+    + BACK-END:
+        * Fetch call to "GET: appointment/dashboard"
+        * Appointment.Find();
+
+- Edit and appointment form
+    + FRONT-END:
+        * React router: go to form
+    + BACK-END:
+        * Fetch call to: "GET: appointment/find/:id"
+        * Appointment.FindOne();
+
+- Edit an appointment
+    + BACK-END:
+        * Fetch call to "POST: appointment/edit/:id"
+        * Appointment.InsertOne()
+
+- Delete and appointment form
+    + FRONT-END:
+        * React router: go to form
+    + BACK-END:
+        * Fetch call to: "GET: appointment/find/:id"
+        * Appointment.FindOne();
+
+- Delete an appointment
+    + BACK-END:
+        * Fetch call to "POST: appointment/edit/:id"
+        * Appointment.InsertOne()
+
+CALENDAR
