@@ -24,6 +24,7 @@ let inquirySchema = new mongoose.Schema({
     action: {
         type: String,
         enum: ['Not Started', 'Contacted', 'Completed'],
+        'default': 'Not Started',
     },
     date: {
         type: Date,

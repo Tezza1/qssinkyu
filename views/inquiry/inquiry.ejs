@@ -17,47 +17,43 @@
     <script src="js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:500|Noto+Sans+TC:300" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139725168-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-139725168-1');
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css">
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('#enquiryModal').modal('show');
+        });
     </script>
 </head>
 
 <body>
     <main>
-        <div id="enquiryModal">
+        <div class="modal fade" id="enquiryModal">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
                         <img class="modal-logo" src="img/logo.jpg" alt="">
                         <h4 class="modal-title ml-3 mt-2">問い合わせ</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <a type="button" class="close" href="/">&times;</a>
                     </div>
                     <!-- Modal body -->
-                    <form>
+                    <form method="post" action="/inquiries/add">
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="usr"><span class="form-icon mr-2"><i class="fas fa-user-circle"></i></span>名:</label>
-                                <input type="text" class="form-control" id="usr" required>
+                                <label for="name"><span class="form-icon mr-2"><i class="fas fa-user-circle"></i></span>名:</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
                             </div>
                             <div class="form-group">
                                 <label for="email"><span class="form-icon mr-2"><i class="far fa-envelope"></i></span>Eメール:</label>
-                                <input type="email" class="form-control" id="email" required>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="tel"><span class="form-icon mr-2"><i class="fas fa-phone"></i></span>電話番号:</label>
-                                <input class="form-control" type="tel" id="tel">
+                                <label for="telephone"><span class="form-icon mr-2"><i class="fas fa-phone"></i></span>電話番号:</label>
+                                <input class="form-control" type="tel" id="telephone" name="telephone">
                             </div>
                             <div class="form-group">
-                                <label for="comment"><span class="form-icon mr-2"><i class="far fa-comments"></i></span>メッセージ:</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
+                                <label for="message"><span class="form-icon mr-2"><i class="far fa-comments"></i></span>メッセージ:</label>
+                                <textarea class="form-control" rows="5" id="message" name="message"></textarea>
                             </div>
                             <div class="form-group form-check">
                                 <label class="form-check-label">
@@ -69,7 +65,7 @@
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-dark btn-lg btn-block btn-ok">送る</button>
                             <br>
-                            <button type="button" class="btn btn-dark btn-lg btn-block btn-cancel" data-dismiss="modal">キャンセル</button>
+                            <a type="button" class="btn btn-dark btn-lg btn-block btn-cancel" href="/">キャンセル</a>
                         </div>
                     </form>
                 </div>

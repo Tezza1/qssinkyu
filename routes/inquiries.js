@@ -22,7 +22,17 @@ router.get('/add', (req, res) => {
 // @access    Public
 router.post('/add', (req, res) => {
     // post data to server with information
-    res.send('post --> add');
+    const newInquiry = {
+                name: req.body.name,
+                email: req.body.email,
+                telephone: req.body.telephone,
+                message: req.body.message,
+            };
+            new Inquiry(newInquiry)
+                .save()
+                .then(idea => {
+                    res.redirect(`/`);
+                });
 });
 
 

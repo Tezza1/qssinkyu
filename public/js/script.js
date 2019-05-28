@@ -16,4 +16,6 @@ function closeNav() {
 
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
+
+    $('#reserveModal').modal('show');
 });

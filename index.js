@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 const passport = require('passport');
 const session = require('express-session');
 
@@ -42,6 +43,11 @@ app.use(bodyParser.json());
 
 // Passport config file
 require('./config/passport')(passport);
+
+// https://github.com/expressjs/method-override
+// override using a query value
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
 
 // Sessions
 app.use(session({

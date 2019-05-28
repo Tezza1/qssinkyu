@@ -26,9 +26,10 @@ let appointmentSchema = new mongoose.Schema({
         type: String,
         enum: ['New', 'Old'],
     },
-    ation: {
+    action: {
         type: String,
         enum: ['Not Started', 'Contacted', 'Completed'],
+        'default': 'Not Started',
     },
     date: {
         type: Date,

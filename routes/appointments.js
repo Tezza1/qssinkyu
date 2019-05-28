@@ -20,7 +20,18 @@ router.get('/add', (req, res) => {
 // @desc      Add an appointment
 // @access    Public
 router.post('/add', (req, res) => {
-    res.send('post --> add');
+    const newAppt = {
+                name: req.body.name,
+                email: req.body.email,
+                telephone: req.body.telephone,
+                appointment_date: req.body.appointment_date,
+                appointment_time: req.body.appointment_time
+            };
+            new Appointment(newAppt)
+                .save()
+                .then(idea => {
+                    res.redirect(`/`);
+                });
 });
 
 
@@ -30,10 +41,31 @@ router.post('/add', (req, res) => {
 // @desc      Add an appointment
 // @access    Private
 router.get('/dashboard', (req, res) => {
-    res.send('get --> dashboard');
+    Appointment.find()
+        .sort({ date: 'desc' })
+        .then(appt => {
+            res.render('appointment/dashboard', {
+                appts: appt
+    });
+        })
 });
 
 // @route     GET
+// @desc      Form to edit an appointment
+// @access    Private
+router.get('/edit/:id', (req, res) => {
+    Appointment.findOne({
+            _id: req.params.id
+        })
+            .then(appt => {
+                res.render('appointment/edit', {
+                    errors: null,
+                    appt
+                });
+            });
+});
+
+// @route     POST
 // @desc      Edit an appointment
 // @access    Private
 router.post('/edit/:id', (req, res) => {

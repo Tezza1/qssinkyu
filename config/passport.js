@@ -15,7 +15,7 @@ module.exports = (passport) => {
             if(!user) {
                 // null errors
                 // false for the user because they weren't found
-                return done(null, false, {message: 'User not found'});
+                return done(null, false);
             }
 
             // if a user is found, next we need to check that the password matches
@@ -28,7 +28,7 @@ module.exports = (passport) => {
                 }
                 else {
                     // null for error, false for user
-                    return done(null, false, {message: 'Password incorrect'});
+                    return done(null, false);
                 }
             });
         });
