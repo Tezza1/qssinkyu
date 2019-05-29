@@ -27,17 +27,6 @@ router.post('/login', (req, res, next) => {
     })(req, res, next)
 });
 
-// @route     GET
-// @desc      User dashboard
-// @access    Private
-router.post('/user/dashboard', (req, res, next) => {
-    // lists buttons to access:
-    //    - calendar
-    //    - inquiries
-    //    - appointments
-});
-
-
 // ---------- LOGOUT ----------
 // @route     GET
 // @desc      Logout

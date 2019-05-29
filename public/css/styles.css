@@ -1,47 +1,39 @@
 /* COLORS */
 body {
-    background-color: #fffff7;
+  background-color: rgb(255, 255, 247);
 }
 
 #top-nav {
-    background-color: #e8d4a1;
-    border-bottom: 2px solid #36e5c0;
+    background-color: rgb(232,212,161);
+    border-bottom: 2px solid rgb(54,229,192);
 }
 
 footer {
-    border-top: 2px solid #36e5c0;
-    background-color: #e8d4a1;
+    border-top: 2px solid rgb(54,229,192);
+    background-color: rgb(232,212,161);
 }
 
-p,
-label,
-.google-link-btn {
-    color: #593221;
+p, label, .google-link-btn {
+    color: rgb(89,50,33);
     font-family: 'Noto Sans TC', sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button {
-    color: #593221;
+h1, h2, h3, h4, h5, h6, button {
+    color: rgb(89,50,33);
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-.btn:focus,
-.btn:active {
-    outline: none !important;
-    box-shadow: none;
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
 }
 
 /* HEADER */
 #hamburger-btn {
-    background-color: #4b4b4b;
-    border: 2px solid #36e5c0;
+    background-color: rgb(75, 75, 75);
+    border: 2px solid rgb(54,229,192);
     margin: -6rem -5rem 0 3rem;
+
 }
 
 .logo-header {
@@ -50,11 +42,11 @@ button {
 
 /* PARAGRAPHS */
 .section-header {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .fa-grip-lines-vertical {
-    color: #36e5c0;
+    color: rgb(54,229,192);
     margin-right: .6rem;
 }
 
@@ -64,45 +56,45 @@ button {
 
 /* CARDS */
 .card {
-    border: 1px solid #36e5c0;
-    background-color: #fffff7;
+    border: 1px solid rgb(54,229,192);
+    background-color: rgb(255, 255, 247);
 }
 
 .card-text p {
-    color: #4b4b4b;
+    color: rgb(75, 75, 75);
 }
 
 .price-button {
-    border: none;
-    background-color: #fffff7;
-    color: #593221;
+  border: none;
+  background-color: rgb(255, 255, 247);
+  color: rgb(89,50,33);
 }
 
 .price-button:hover {
-    color: #36e5c0;
+  color: rgb(54,229,192);
 }
 
 .price-button:focus {
-    border: none;
+  border: none;
 }
 
 .popover {
-    background: #fffff7;
-    color: #593221;
-    border: 2px solid #36e5c0;
+    background: rgb(255, 255, 247);
+    color: rgb(89,50,33);
+    border: 2px solid rgb(54,229,192);
 }
 
 /* TABLE */
 th {
-    color: #593221;
+    color: rgb(89,50,33);
 }
 
 td {
-    color: #4b4b4b;
+    color: rgb(75, 75, 75);
 }
 
 .fa-slash {
-    color: #36e5c0;
+  color: rgb(54,229,192);
 }
 
 .table-side-label {
@@ -112,49 +104,50 @@ td {
 
 /* ACCESS */
 .external-link {
-    color: #593221;
+    color: rgb(89,50,33);
 }
 
 .external-link:hover {
-    color: #593221;
+    color: rgb(89,50,33);
 }
 
 /* CONTACT */
 .contact-link {
-    color: #593221;
+  color: rgb(89,50,33);
 }
 
 .contact-link:hover {
-    color: #36e5c0;
-    text-decoration: none;
+  color: rgb(54,229,192);
+  text-decoration: none;
 }
 
 .google-link-btn {
-    border: 1px solid #593221;
+  border: 1px solid rgb(89,50,33);
 }
 
 .google-link-btn:hover {
-    color: #36e5c0;
+  color: rgb(54,229,192);
 }
 
 .bottom-btn {
-    color: #36e5c0;
-    background-color: #4b4b4b;
+    color: rgb(54,229,192);
+    background-color:rgb(75, 75, 75);
+    border: 1px solid rgb(54,229,192);
+    border-radius: .25rem;
     font-weight: bold;
     font-size: 110%;
     padding: 1rem;
-    border: 1px solid #36e5c0;
 }
 
 .bottom-btn:hover {
-    color: #593221;
-    border: 1px solid #593221;
-    background-color: #e8d4a1;
+    color: rgb(89,50,33);
+    border: 1px solid rgb(89,50,33);
+    background-color: rgb(232,212,161);
 }
 
 /* FORM */
 .modal-content {
-    background-color: #fffff7;
+  background-color: rgb(255, 255, 247);
 }
 
 .modal-logo {
@@ -164,139 +157,131 @@ td {
 }
 
 .modal-header {
-    border-bottom: 2px solid #36e5c0;
+  border-bottom: 2px solid rgb(54,229,192);
 }
 
 .modal-footer {
-    border-top: 2px solid #36e5c0;
+  border-top: 2px solid rgb(54,229,192);
 }
 
 .form-icon {
-    color: #36e5c0;
+    color: rgb(54,229,192);
 }
 
 label {
     font-weight: bold;
-    color: #593221;
+    color: rgb(89,50,33);
 }
 
 .form-control {
-    border: 1px solid #36e5c0;
-    background-color: #fffff7;
+    border: 1px solid rgb(54,229,192);
+    background-color: rgb(255, 255, 247);
 }
 
-.form-control:focus {
-    background-color: #fffff7;
+.form-control:focus{
+  background-color: rgb(255, 255, 247);
 }
 
 .btn-ok {
-    background-color: #36e5c0;
-    border: 1px solid #4b4b4b;
-    color: #4b4b4b;
+    background-color: rgb(54,229,192);
+    border: 1px solid $logo_color;
+    color: $logo_color;
     font-weight: bold;
 }
 
 .btn-ok:hover {
-    color: #593221;
-    background-color: #e8d4a1;
-    border: 1px solid #593221;
+    color: rgb(89,50,33);
+    background-color: rgb(232,212,161);
+    border: 1px solid $main-dark-color;
 }
 
 .btn-cancel {
-    background-color: #4b4b4b;
-    border: 1px solid #36e5c0;
-    color: #36e5c0;
+    background-color: $logo_color;
+    border: 1px solid rgb(54,229,192);
+    color: rgb(54,229,192);
     font-weight: bold;
 }
 
 .btn-cancel:hover {
-    color: #593221;
-    background-color: #e8d4a1;
-    border: 1px solid #593221;
+    color: rgb(89,50,33);
+    background-color: rgb(232,212,161);
+    border: 1px solid $main-dark-color;
 }
 
 /* FOOTER */
 .footer-logo {
-    max-height: 4rem;
+  max-height: 4rem;
 }
 
 .footer-icon {
-    color: #593221 !important;
+    color: rgb(89,50,33) !important;
     font-size: 20px !important;
     margin-top: 10px !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 5px !important;;
 }
 
 .footer-icon:hover {
-    color: #5d4037 !important;
+    color: #5d4037 !important ;
 }
 
 /* SIDENAV */
 .sidenav {
-    height: 100%;
-    /* 100% Full-height */
-    width: 0;
-    /* 0 width - change this with JavaScript */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #4b4b4b;
-    overflow-x: hidden;
-    /* Disable horizontal scroll */
-    padding-top: 60px;
-    /* Place content 60px from the top */
-    transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidenav */
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: rgb(75, 75, 75);
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #36e5c0;
-    display: block;
-    transition: 0.3s;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(54,229,192);
+  display: block;
+  transition: 0.3s;
 }
 
 .sidenav a:hover {
-    color: #e8d4a1;
+  color: rgb(232,212,161);
 }
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 .sidebar-btn {
+    padding: 8px 8px 8px 8px !important;
+    font-size: 15px !important;
     margin-top: 10px;
-    color: #36e5c0;
-    border: 1px solid #36e5c0;
+    color: rgb(54,229,192);
+    background-color: rgb(75, 75, 75);
+    border: 1px solid rgb(54,229,192);
 }
 
 .sidebar-btn:hover {
-    background-color: #e8d4a1;
-    color: #593221;
+    background-color: rgb(232,212,161);
+    color: rgb(89,50,33) !important;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-
-    .sidenav a {
-        font-size: 18px;
-    }
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
 }
 
 @media screen and (max-width: 576px) {
+
     #hamburger-btn {
         margin: -7rem -5rem 0 1rem;
     }
@@ -306,6 +291,6 @@ label {
     }
 
     .table-side-header {
-        font-size: 60%;
+      font-size: 60%;
     }
 }

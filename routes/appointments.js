@@ -68,15 +68,32 @@ router.get('/edit/:id', (req, res) => {
 // @route     POST
 // @desc      Edit an appointment
 // @access    Private
-router.post('/edit/:id', (req, res) => {
-    res.send('/:edit/:id');
+router.put('/edit/:id', (req, res) => {
+    Appointment.findOne({ _id: req.params.id })
+        .then(appt => {
+           appt.name = req.body.name;
+           appt.email = req.body.email;
+           appt.telephone = req.body.telephone;
+           appt.appointment_date = req.body.appointment_date;
+           appt.appointment_time = req.body.appointment_time;
+           appt.action = req.body.action;
+
+           appt.save()
+            .then(appt => {
+                res.redirect(`/appointments/dashboard`);
+            });
+
+        });
 });
 
-// @route     GET
+// @route     POST
 // @desc      Delete an appointment
 // @access    Private
-router.post('/delete/:id', (req, res) => {
-    res.send('/delete/:id');
+router.delete('/edit/:id', (req, res) => {
+    Appointment.deleteOne({ _id: req.params.id })
+        .then(() => {
+            res.redirect('/appointments/dashboard');
+        });
 })
 
 module.exports = router;

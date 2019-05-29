@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../../js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:500|Noto+Sans+TC:300" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../css/styles.css">
@@ -34,10 +34,10 @@
                     <div class="modal-header">
                         <img class="modal-logo" src="img/logo.jpg" alt="">
                         <h4 class="modal-title ml-3 mt-2">予約</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <a type="button" class="close" href="/appointments/dashboard">&times;</a>
                     </div>
                     <!-- Modal body -->
-                    <form method="post" action="/appointments/add">
+                    <form action="/appointments/edit/<%= appt._id %>?_method=PUT" method="post">
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="name"><span class="form-icon mr-2"><i class="fas fa-user-circle"></i></span>名:</label>
@@ -57,29 +57,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="appointment_time"><span class="form-icon mr-2"><i class="far fa-clock"></i></span>時間:</label>
-                                <select class="form-control" id="appointment_time" name="appointment_time" value="<%= appt.appointment_time %>">
-                                    <optgroup label="午前">
-                                        <option value="" disabled selected>時間を選ぶ</option>
-                                        <option value="9">09:00 - 09:30</option>
-                                        <option value="9.5">09:30 - 10:00</option>
-                                        <option value="10">10:00 - 10:30</option>
-                                        <option value="10.5">10:30 - 11:00</option>
-                                        <option value="11">11:00 - 11:30</option>
-                                        <option value="11.5">11:30 - 12:o0</option>
-                                    </optgroup>
-                                    <optgroup label="午後">
-                                        <option value="13">13:00 - 13:30</option>
-                                        <option value="13.5">13:30 - 14:00</option>
-                                        <option value="14">14:00 - 14:30</option>
-                                        <option value="14.5">14:30 - 15:00</option>
-                                        <option value="15">15:00 - 15:30</option>
-                                        <option value="15.5">15:30 - 16:00</option>
-                                        <option value="16">16:00 - 16:30</option>
-                                        <option value="16.5">16:30 - 17:00</option>
-                                        <option value="17">17:00 - 17:30</option>
-                                        <option value="17.5">17:30 - 18:00</option>
-                                    </optgroup>
-                                </select>
+                                 <input class="form-control" type="text" id="appointment_time" name="appointment_time" value="<%= appt.appointment_time %> "required>
                             </div>
                             <div class="form-group">
                                 <label for="action"><span class="form-icon mr-2"><i class="far fa-list-alt"></i></span>アクション:</label>
@@ -94,7 +72,7 @@
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-dark btn-lg btn-block btn-ok">送る</button>
                             <br>
-                            <button type="button" class="btn btn-dark btn-lg btn-block btn-cancel" data-dismiss="modal">キャンセル</button>
+                            <a class="btn btn-dark btn-lg btn-block btn-cancel" href="/appointments/dashboard"">キャンセル</a>
                         </div>
                     </form>
                 </div>
