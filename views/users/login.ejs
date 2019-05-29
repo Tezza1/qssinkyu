@@ -9,7 +9,7 @@
      <meta name="description" content="当院では鍼灸治療に捉われず、可能な限り患者様のご要望に沿った施術を致しております">
     <meta name="keywords" content="湊川, 荒田町, 鍼灸, 整体, 機能訓練, 頭痛, 腰痛, 首の痛み, 肩の痛み, 五十肩">
     <meta name="author" content="Terry Shenker">
-    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="shortcut icon" href="../../img/logo.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -27,14 +27,14 @@
 
 <body>
     <main>
-        <div class="modal fade" id="adminModal">
+        <div class="modal fade" id="adminModal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <img class="modal-logo" src="img/logo.jpg" alt="">
+                        <img class="modal-logo" src="../../img/logo.jpg" alt="">
                         <h4 class="modal-title ml-3 mt-2">管理者</h4>
-                        <a type="button" class="close" href="/">&times;</a>
+                        <a class="close" href="/">&times;</a>
                     </div>
                     <!-- Modal body -->
                     <form method="post" action="/users/login">
@@ -52,7 +52,7 @@
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-dark btn-lg btn-block btn-ok">ログイン</button>
                             <br>
-                            <a type="button" class="btn btn-dark btn-lg btn-block btn-cancel" href="/">キャンセル</a>
+                            <a class="btn btn-dark btn-lg btn-block btn-cancel" href="/">キャンセル</a>
                         </div>
                     </form>
                 </div>

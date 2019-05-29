@@ -31,6 +31,10 @@
                 <!-- SIDENAV -->
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="/users/dashboard">
+                        <i class="fas fa-arrow-left"></i>
+                        バック
+                    </a>
                     <a href="/users/logout">ログウト</a>
                     <hr>
                 </div>
@@ -41,7 +45,7 @@
                 </a>
             </nav>
         </header>
-        <main>
+        <main class="mb-5">
             <div class="container">
                 <div class="row pt-5">
                     <div class="col-md-10 offset-md-2 col-sm-12">
@@ -55,32 +59,41 @@
             <div class="container">
                 <div class="row pt-5">
                     <div class="col-md-6 offset-md-3 col-sm-12">
-                        <div class="card">
+                        <% for (let i = 0; i < inqs.length; i++) { %>
+                        <div class="card  mb-3">
                             <div class="card-body">
-                                <h4 class="card-title">
-                                    <i class="fas fa-grip-lines-vertical"></i>
-                                    問い合わせ
-                                </h4>
-                                <p class="card-text">ダッシュボードに進め</p>
-                                <a class="btn btn-dark btn-lg btn-block btn-ok" href="/inquiries/dashboard">送る</a>
-                                <a class="btn btn-dark btn-lg btn-block btn-cancel" href="/users/logout">キャンセル</a>
+                                <h5 class="card-title">
+                                    <%= inqs[i].name %>
+                                </h5>
+                                <p>
+                                    <span class="contact-icon"><i class="fas fa-phone mr-2"></i></span>
+                                    <a href="tel:<%= inqs[i].telephone %>" class="contact-link"><%= inqs[i].telephone %></a>
+                                </p>
+                                <p>
+                                    <span class="contact-icon"><i class="fas fa-at mr-2"></i></span>
+                                    <a href="mailto:<%= inqs[i].email %>" class="contact-link" target="_top"><%= inqs[i].email %></a>
+                                </p>
+                                <p>
+                                    <span class="contact-icon"><i class="far fa-comments mr-2"></i></span>
+                                    <%= inqs[i].message %>
+                                </p>
+                                <p>
+                                    <span class="contact-icon"><i class="far fa-clipboard mr-2"></i></span>
+                                    <%= inqs[i].notes %>
+                                </p>
+                                <p class="card-text">
+                                    <span class="font-weight-bold mr-2">ステータス:</span>
+                                    <%= inqs[i].action %>
+                                </p>
+                                <a class="btn btn-dark btn-lg btn-block btn-ok mb-2" href="/inquiries/edit/<%= inqs[i]._id %>">エディット</a>
+                                <form action="/inquiries/edit/<%= inqs[i]._id %>?_method=DELETE" method="post">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" id="inq" name="appt" value="<%= inqs[i].name %>">
+                                    <button type="submit" class="btn btn-dark btn-lg btn-block btn-cancel">デリート</button>
+                                </form>
                           </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row pt-5 pb-5">
-                    <div class="col-md-6 offset-md-3 col-sm-12">
-                        <div class="card mb-5">
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <i class="fas fa-grip-lines-vertical"></i>
-                                    予約
-                                </h4>
-                                <p class="card-text">ダッシュボードに進め</p>
-                                <a class="btn btn-dark btn-lg btn-block btn-ok" href="/appointments/dashboard">送る</a>
-                                <a class="btn btn-dark btn-lg btn-block btn-cancel" href="/users/logout">キャンセル</a>
-                          </div>
-                        </div>
+                        <% } %>
                     </div>
                 </div>
             </div>

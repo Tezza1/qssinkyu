@@ -9,12 +9,12 @@
      <meta name="description" content="当院では鍼灸治療に捉われず、可能な限り患者様のご要望に沿った施術を致しております">
     <meta name="keywords" content="湊川, 荒田町, 鍼灸, 整体, 機能訓練, 頭痛, 腰痛, 首の痛み, 肩の痛み, 五十肩">
     <meta name="author" content="Terry Shenker">
-    <link rel="shortcut icon" href="img/logo.png">
+    <link rel="shortcut icon" href="../../img/logo.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:500|Noto+Sans+TC:300" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
@@ -31,7 +31,11 @@
                 <!-- SIDENAV -->
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="#">ログウト</a>
+                    <a href="/users/dashboard">
+                        <i class="fas fa-arrow-left"></i>
+                        バック
+                    </a>
+                    <a href="/users/logout">ログウト</a>
                     <hr>
                 </div>
                 <!-- LOGO HEADER -->
@@ -41,7 +45,7 @@
                 </a>
             </nav>
         </header>
-        <main>
+        <main class="mb-5">
             <div class="container">
                 <div class="row pt-5">
                     <div class="col-md-10 offset-md-2 col-sm-12">

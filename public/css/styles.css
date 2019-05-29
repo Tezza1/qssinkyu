@@ -150,6 +150,15 @@ td {
   background-color: rgb(255, 255, 247);
 }
 
+.close {
+    color: rgb(89,50,33);
+}
+
+.close:hover {
+    color: rgb(54,229,192);
+}
+
+
 .modal-logo {
     max-height: 3rem;
     margin-top: 0;

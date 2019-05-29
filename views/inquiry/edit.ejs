@@ -14,53 +14,65 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../../js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:500|Noto+Sans+TC:300" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../css/styles.css">
-        <script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function(){
-            $('#enquiryModal').modal('show');
+            $('#reserveModal').modal('show');
         });
     </script>
 </head>
 
 <body>
     <main>
-        <div class="modal fade" id="enquiryModal" data-backdrop="static" data-keyboard="false">
+        <div class="modal fade" id="reserveModal" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
                         <img class="modal-logo" src="../../img/logo.jpg" alt="">
                         <h4 class="modal-title ml-3 mt-2">問い合わせ</h4>
-                        <a class="close" href="/">&times;</a>
+                        <a class="close" href="/inquiries/dashboard">&times;</a>
                     </div>
                     <!-- Modal body -->
-                    <form method="post" action="/inquiries/add">
+                    <form action="/inquiries/edit/<%= inq._id %>?_method=PUT" method="post">
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="name"><span class="form-icon mr-2"><i class="fas fa-user-circle"></i></span>名:</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <input type="text" class="form-control" id="name" name="name" value="<%= inq.name %>"required>
                             </div>
                             <div class="form-group">
                                 <label for="email"><span class="form-icon mr-2"><i class="far fa-envelope"></i></span>Eメール:</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <input type="email" class="form-control" id="email" name="email" value="<%= inq.email %>" required>
                             </div>
                             <div class="form-group">
                                 <label for="telephone"><span class="form-icon mr-2"><i class="fas fa-phone"></i></span>電話番号:</label>
-                                <input class="form-control" type="tel" id="telephone" name="telephone">
+                                <input class="form-control" type="tel" id="telephone" name="telephone" value="<%= inq.telephone %>" required>
                             </div>
                             <div class="form-group">
                                 <label for="message"><span class="form-icon mr-2"><i class="far fa-comments"></i></span>メッセージ:</label>
-                                <textarea class="form-control" rows="5" id="message" name="message"></textarea>
+                                <textarea class="form-control" rows="5" id="message" name="message"><%= inq.message %></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="notes"><span class="form-icon mr-2"><i class="far fa-clipboard"></i></span>ノート:</label>
+                                <textarea class="form-control" rows="5" id="notes" name="notes"><%= inq.notes %></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="action"><span class="form-icon mr-2"><i class="far fa-list-alt"></i></span>アクション:</label>
+                                <select class="form-control" id="action" name="action" value="<%= inq.action %>">
+                                    <option value="Not Started">Not Started</option>
+                                    <option value="Contacted">Contacted</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
                             </div>
                         </div>
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <button type="submit" class="btn btn-dark btn-lg btn-block btn-ok">送る</button>
                             <br>
-                            <a class="btn btn-dark btn-lg btn-block btn-cancel" href="/">キャンセル</a>
+                            <a class="btn btn-dark btn-lg btn-block btn-cancel" href="/inquiries/dashboard"">キャンセル</a>
                         </div>
                     </form>
                 </div>

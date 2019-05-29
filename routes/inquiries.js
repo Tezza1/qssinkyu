@@ -41,32 +41,60 @@ router.post('/add', (req, res) => {
 // @route     GET
 // @desc      Add an inquiry
 // @access    Private
-router.get('/inquiries/dashboard', (req, res) => {
-    // list all inquiries
-    res.send('get --> dashboard');
+router.get('/dashboard', (req, res) => {
+    Inquiry.find()
+        .sort({ date: 'desc' })
+        .then(inq => {
+            res.render('inquiry/dashboard', {
+                inqs: inq
+    });
+        })
 });
 
 // @route     GET
 // @desc      Edit an inquiry
 // @access    Private
-router.get('inquiries/edit/:id', (req, res) => {
-    // put an inquiry into an edit form
-    res.send('/:edit/:id');
+router.get('/edit/:id', (req, res) => {
+    Inquiry.findOne({
+            _id: req.params.id
+        })
+            .then(inq => {
+                res.render('inquiry/edit', {
+                    errors: null,
+                    inq
+                });
+            });
 });
 
-// @route     POST
+// @route     PUT
 // @desc      Edit an inquiry
 // @access    Private
-router.post('inquiries/edit/:id', (req, res) => {
-    // send data back to server with info
-    res.send('/:edit/:id');
+router.put('/edit/:id', (req, res) => {
+    Inquiry.findOne({ _id: req.params.id })
+        .then(inq => {
+           inq.name = req.body.name;
+           inq.email = req.body.email;
+           inq.telephone = req.body.telephone;
+           inq.message = req.body.message;
+           inq.notes = req.body.notes;
+           inq.action = req.body.action;
+
+           inq.save()
+            .then(inq => {
+                res.redirect(`/inquiries/dashboard`);
+            });
+
+        });
 });
 
-// @route     GET
+// @route     DELETE
 // @desc      Delete an inquiry
 // @access    Private
-router.post('/delete/:id', (req, res) => {
-    res.send('/delete/:id');
+router.delete('/edit/:id', (req, res) => {
+    Inquiry.deleteOne({ _id: req.params.id })
+        .then(() => {
+            res.redirect('/inquiries/dashboard');
+        });
 })
 
 module.exports = router;

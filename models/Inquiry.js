@@ -19,7 +19,8 @@ let inquirySchema = new mongoose.Schema({
         required: true
     },
     notes: {
-        type: String
+        type: String,
+        'default': '...'
     },
     action: {
         type: String,
