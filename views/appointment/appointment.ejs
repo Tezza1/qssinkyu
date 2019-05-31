@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../../js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:500|Noto+Sans+TC:300" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../css/styles.css">
@@ -52,8 +52,11 @@
                                 <input class="form-control" type="tel" id="telephone" name="telephone" required>
                             </div>
                             <div class="form-group">
-                                <label for="appointment_date"><span class="form-icon mr-2"><i class="far fa-calendar-alt"></i></span>月日:</label>
-                                <input class="form-control" type="date" id="appointment_date" name="appointment_date" required>
+                                <label for="appointment_date">
+                                    <span class="form-icon mr-2"><i class="far fa-calendar-alt"></i></span>
+                                    月日: <span class="ml-2"><small><em>1ヶ月まで予約する</em></small></span>
+                                </label>
+                                <input class="form-control" type="date" id="appointment_date" name="appointment_date" min="<%= today %>" max="<%= next_month %>" required>
                             </div>
                             <div class="form-group">
                                 <label for="appointment_time"><span class="form-icon mr-2"><i class="far fa-clock"></i></span>時間:</label>

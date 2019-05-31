@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+let date = require('date-and-time');
 
 // ---------- LOAD MONGOOSE MODELS ----------
 require('../models/Appointment');
@@ -13,7 +14,20 @@ const Appointment = mongoose.model('appointments');
 // @desc      Get form to add an appointment
 // @access    Public
 router.get('/add', (req, res) => {
-    res.render('appointment/appointment');
+
+    // https://www.npmjs.com/package/date-and-time
+    let now = new Date();
+    let today = date.format(now, 'YYYY-MM-DD');
+    let tomorrow = date.addDays(now, 1);
+    let next_month = date.addMonths(now, 1);
+
+    res.render(
+        'appointment/appointment',
+        {
+            today,
+            next_month: date.format(next_month, 'YYYY-MM-DD')
+        }
+    );
 });
 
 // @route     POST
@@ -31,6 +45,9 @@ router.post('/add', (req, res) => {
                 .save()
                 .then(idea => {
                     res.redirect(`/`);
+                })
+                .catch(e => {
+                    res.redirect('/');
                 });
 });
 
@@ -46,8 +63,11 @@ router.get('/dashboard', (req, res) => {
         .then(appt => {
             res.render('appointment/dashboard', {
                 appts: appt
-    });
+            });
         })
+        .catch(e => {
+            res.redirect('/');
+        });
 });
 
 // @route     GET
@@ -62,6 +82,9 @@ router.get('/edit/:id', (req, res) => {
                     errors: null,
                     appt
                 });
+            })
+            .catch(e => {
+                res.redirect('/');
             });
 });
 
@@ -81,6 +104,9 @@ router.put('/edit/:id', (req, res) => {
            appt.save()
             .then(appt => {
                 res.redirect(`/appointments/dashboard`);
+            })
+            .catch(e => {
+                res.redirect('/');
             });
 
         });
@@ -93,6 +119,9 @@ router.delete('/edit/:id', (req, res) => {
     Appointment.deleteOne({ _id: req.params.id })
         .then(() => {
             res.redirect('/appointments/dashboard');
+        })
+        .catch(e => {
+            res.redirect('/');
         });
 })
 

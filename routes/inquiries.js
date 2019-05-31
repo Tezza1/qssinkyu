@@ -32,6 +32,9 @@ router.post('/add', (req, res) => {
                 .save()
                 .then(idea => {
                     res.redirect(`/`);
+                })
+                .catch(e => {
+                    res.redirect('/');
                 });
 });
 
@@ -47,8 +50,11 @@ router.get('/dashboard', (req, res) => {
         .then(inq => {
             res.render('inquiry/dashboard', {
                 inqs: inq
-    });
+            });
         })
+        .catch(e => {
+            res.redirect('/');
+        });
 });
 
 // @route     GET
@@ -63,6 +69,9 @@ router.get('/edit/:id', (req, res) => {
                     errors: null,
                     inq
                 });
+            })
+            .catch(e => {
+                res.redirect('/');
             });
 });
 
@@ -82,6 +91,9 @@ router.put('/edit/:id', (req, res) => {
            inq.save()
             .then(inq => {
                 res.redirect(`/inquiries/dashboard`);
+            })
+            .catch(e => {
+                res.redirect('/');
             });
 
         });
@@ -94,6 +106,9 @@ router.delete('/edit/:id', (req, res) => {
     Inquiry.deleteOne({ _id: req.params.id })
         .then(() => {
             res.redirect('/inquiries/dashboard');
+        })
+        .catch(e => {
+            res.redirect('/');
         });
 })
 
